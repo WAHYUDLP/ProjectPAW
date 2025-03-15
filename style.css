@@ -1,0 +1,587 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('aset/background.png');
+    /* Ganti dengan path gambar */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Overlay hitam transparan */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: #EAFAEA;
+    z-index: 1000;
+    /* Agar navbar tetap di atas elemen lain */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Tambahkan bayangan agar lebih menonjol */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+    /* Jarak antara logo dan menu navbar */
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+body {
+    margin-top: 80px;
+    /* Sesuaikan dengan tinggi navbar */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #790C29;
+}
+
+nav a:focus,
+nav a:active {
+    color: #790C29;
+    border-bottom: 3px solid #790C29;
+}
+
+nav a.active {
+    color: #790C29;
+    border-bottom: 3px solid #790C29;
+}
+
+.auth-buttons {
+    display: flex;
+    margin-right: 4.5rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000000;
+    border: 0.1rem solid #6E8E59;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+
+}
+
+.auth-buttons a:hover {
+    background-color: #790C29;
+    color: white;
+    border: none;
+}
+
+.auth-buttons a:active {
+    background-color: #790C29;
+    color: white;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    margin-top: -1rem;
+}
+
+/* Logo dan Nama BloodWellness */
+.brand-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.brand-logo {
+    width: 10px;
+    height: 10px;
+}
+
+.brand-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.brand-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    display: none;
+    /* Secara default disembunyikan (desktop) */
+}
+
+.logo-container {
+    display: flex;
+    /* Menggunakan flexbox */
+    align-items: center;
+    /* Membuat logo dan teks sejajar */
+}
+
+.logo {
+    width: 40px;
+    /* Sesuaikan ukuran logo */
+    height: auto;
+    margin-right: 8px;
+    /* Jarak antara logo dan teks */
+}
+
+.slider-container {
+    flex: 1 1 50%;
+    position: relative;
+    max-width: 500px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    color: white;
+}
+
+.slides {
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.8s ease-in-out;
+    align-items: flex-start;
+}
+
+.slide {
+    min-width: 100%;
+    flex: 0 0 100%;
+}
+
+.nav-lines {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    padding-left: 0rem;
+}
+
+
+
+.line {
+    width: 30px;
+    height: 4px;
+    background-color: gray;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.line.active {
+    background-color: rgb(255, 255, 255);
+}
+
+
+#password {
+    padding-right: 2px;
+    position: relative;
+}
+
+.register-form p.heading,
+.register-form h3 {
+    text-align: left;
+    width: 100%;
+}
+
+.register-form p.heading {
+    font-weight: 500;
+    margin-bottom: -0.9rem;
+}
+
+.register-form h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.register-form {
+    width: 100%;
+    max-width: 25rem;
+    margin: 3rem 0 0 3.125rem;
+    padding: 1.25rem;
+    background: #edf7e1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+    min-height: calc(100vh - 4.375rem);
+    height: auto;
+    position: relative;
+}
+
+.register-form h2 {
+    text-align: left;
+    margin-bottom: 1.25rem;
+    font-size: 1.375rem;
+    width: 100%;
+}
+
+.register-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.register-form label {
+    margin-top: 0.625rem;
+}
+
+.register-form input {
+    padding: 0.625rem;
+    margin-top: 0.3125rem;
+    border: 0.1rem solid #6E8E59;
+    border-radius: 0.3125rem;
+}
+
+.register-form button {
+    background-color: #790C29;
+    color: rgb(255, 255, 255);
+    border: 0.0625rem solid #ccc;
+    margin-top: 0.9375rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    border-radius: 0.3125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    width: 100%;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+.register-form button:hover {
+    background-color: #f0f0f0;
+    color: #790C29;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+
+.google-auth {
+    text-align: center;
+    width: 100%;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.google-auth button {
+    background-color: white;
+    color: black;
+    border: 0.0625rem solid #ccc;
+    margin-top: 0.9375rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    border-radius: 0.3125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    width: 100%;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+
+}
+
+.google-auth button:hover {
+    background-color: #f0f0f0;
+}
+
+.auth-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 0.2rem;
+    color: white;
+}
+
+
+.mobile-navbar {
+    display: none;
+    /* Sembunyikan di desktop */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #EAFAEA;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
+
+    z-index: 1000;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.mobile-navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    /* Bagi ruang secara merata */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.mobile-navbar ul li {
+    flex-grow: 1;
+    /* Biarkan ikon menyesuaikan lebar */
+    text-align: center;
+}
+
+.mobile-navbar ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: #6E8E59;
+    font-size: 1.5rem;
+    text-decoration: none;
+    width: 100%;
+    /* Ikon mengikuti lebar li */
+}
+
+.mobile-navbar ul li a img {
+    width: 24px;
+    /* Ukuran default ikon */
+    height: auto;
+}
+
+.mobile-navbar ul li a:hover {
+    color: #790C29;
+}
+.mobile-navbar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.mobile-navbar a:hover {
+    color: #790C29; /* Warna saat hover */
+}
+
+.mobile-navbar i {
+    font-size: 24px;
+}
+
+/* Garis bawah untuk ikon yang aktif */
+.mobile-navbar a:target::after {
+    content: "";
+    width: 40%;
+    height: 3px;
+    background: #790C29;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    top: 3rem;
+}
+
+
+@media (max-width: 600px) {
+    .mobile-navbar ul {
+        justify-content: space-around;
+        /* Beri jarak antar ikon */
+    }
+
+    .mobile-navbar ul li a img {
+        width: 20px;
+        /* Kurangi ukuran ikon jika layar lebih kecil */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .brand-text {
+        display: block;
+        /* Tampilkan teks di mobile */
+    }
+
+    nav ul,
+    nav a,
+    nav a:hover,
+    nav a:focus,
+    nav a:active {
+        display: none;
+    }
+
+    .auth-buttons {
+        display: flex;
+        margin-right: 2rem;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .auth-buttons a {
+        text-decoration: none;
+        font-weight: 600;
+        color: #000000;
+        border: 0.1rem solid #6E8E59;
+        padding: 0.3rem 1rem;
+        border-radius: 0.5rem;
+        display: inline-block;
+
+    }
+
+    .auth-buttons a:hover {
+        background-color: #790C29;
+        color: white;
+        border: none;
+    }
+
+    .auth-buttons a:active {
+        background-color: #790C29;
+        color: white;
+    }
+
+    .mobile-navbar {
+        display: flex;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slider-container {
+        order: -1;
+        /* Memastikan slider muncul di atas form */
+    }
+
+    .register-form {
+        margin: 3rem auto 0;
+        /* Tengah otomatis tanpa margin kiri */
+
+        width: 90%;
+    }
+
+    .slider-container {
+        flex: 1 1 50%;
+        position: relative;
+        max-width: 500px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        color: white;
+        padding-top: 12rem;
+        padding-bottom: 5rem;
+    }
+
+    .mobile-navbar ul li a {
+        position: relative;
+        padding-bottom: 10px; 
+        
+    }
+    
+    .mobile-navbar ul li a.active::after,
+    .mobile-navbar ul li a:focus::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 40%;
+        height: 3px;
+        background-color: #790C29;
+        transform: translateX(-50%);
+        border-radius: 2px;
+
+    }
+    .mobile-navbar ul li a {
+        color: #6E8E59; /* Warna default ikon */
+        font-size: 24px;
+        padding: 10px;
+        display: inline-block;
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .mobile-navbar ul li a.active {
+        color: #790C29; /* Warna ikon ketika halaman aktif */
+    }
+    
+}
