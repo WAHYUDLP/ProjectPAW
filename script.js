@@ -37,19 +37,50 @@ function moveSlide(index) {
 // Slider end
 
 
-//Eye
-document.getElementById('toggle-password').addEventListener('click', function() {
-    const passwordField = document.getElementById('password');
-    const eyeIcon = document.getElementById('eye-icon');
-    
-    // Toggle the input type between 'password' and 'text'
-    if (passwordField.type === 'password') {
-        passwordField.type = 'text';
-        eyeIcon.classList.remove('fa-eye');
-        eyeIcon.classList.add('fa-eye-slash');
-    } else {
-        passwordField.type = 'password';
-        eyeIcon.classList.remove('fa-eye-slash');
-        eyeIcon.classList.add('fa-eye');
+// Eror sukses hilang
+setTimeout(() => {
+    const message = document.querySelector('.error-message, .success-message');
+    if (message) {
+        message.style.display = 'none';
+    }
+}, 3000);
+
+//Konfirmasi logout
+function confirmLogout() {
+    var confirmLogout = confirm("Apakah Anda yakin ingin keluar?");
+    if (confirmLogout) {
+        window.location.href = "prosesLogout.php"; // Arahkan ke halaman logout jika konfirmasi
+    }
+}
+
+
+
+// navabr
+ // Ambil semua link navbar mobile
+ const links = document.querySelectorAll('.mobile-navbar a');
+
+ // Ambil path URL saat ini (misalnya: kalkulator.php)
+ const currentPage = window.location.pathname.split("/").pop();
+
+ // Loop setiap link dan cek apakah href-nya cocok
+ links.forEach(link => {
+     const href = link.getAttribute("href").split("/").pop();
+
+     // Hapus class 'active' dari semua link
+     link.classList.remove("active");
+
+     // Kalau href cocok dengan halaman sekarang, tambahkan class 'active'
+     if (href === currentPage) {
+         link.classList.add("active");
+     }
+ });
+
+   // Scroll ke hasil jika URL mengandung #hasil-kalori
+   window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash === '#hasil-kalori') {
+        const target = document.getElementById('hasil-kalori');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 });

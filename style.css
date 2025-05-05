@@ -5,11 +5,27 @@ body {
     padding: 0;
 }
 
+
+.bodyLogin {
+    background-image: url('aset/background.webp?v=1');
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+
+
+}
+
+.bodyKal {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    background-color: #6E8E59;
+
+}
+
 body {
+    background-color: #6E8E59;
+    /* Sesuaikan agar mirip latar belakang gambar */
+
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('aset/background.png');
     /* Ganti dengan path gambar */
     background-size: cover;
     background-position: center;
@@ -21,6 +37,7 @@ body {
 body::before {
     content: "";
     position: fixed;
+
     top: 0;
     left: 0;
     width: 100%;
@@ -28,7 +45,6 @@ body::before {
     background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
-
 
 header {
     position: fixed;
@@ -47,12 +63,6 @@ header {
     /* Tambahkan bayangan agar lebih menonjol */
 }
 
-.nav-container {
-    display: flex;
-    align-items: center;
-    gap: 0rem;
-    /* Jarak antara logo dan menu navbar */
-}
 
 .logo img {
     height: 50px;
@@ -63,6 +73,13 @@ header {
 body {
     margin-top: 80px;
     /* Sesuaikan dengan tinggi navbar */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+    /* Jarak antara logo dan menu navbar */
 }
 
 nav ul {
@@ -96,14 +113,23 @@ nav a.active {
     border-bottom: 3px solid #790C29;
 }
 
-.auth-buttons {
+.auth-buttonsKal {
+    margin-right: -0.5rem;
     display: flex;
-    margin-right: 4.5rem;
     gap: 1rem;
     align-items: center;
 }
 
-.auth-buttons a {
+.auth-buttons {
+    display: flex;
+    margin-right: 3.5rem;
+    gap: 1rem;
+
+    align-items: center;
+}
+
+.auth-buttons a,
+.auth-buttonsKal a {
     text-decoration: none;
     font-weight: 600;
     color: #000000;
@@ -114,13 +140,15 @@ nav a.active {
 
 }
 
-.auth-buttons a:hover {
+.auth-buttons a:hover,
+.auth-buttonsKal a:hover {
     background-color: #790C29;
     color: white;
     border: none;
 }
 
-.auth-buttons a:active {
+.auth-buttons a:active,
+.auth-buttonsKal a:active {
     background-color: #790C29;
     color: white;
 }
@@ -177,6 +205,15 @@ nav a.active {
     margin-right: 8px;
     /* Jarak antara logo dan teks */
 }
+
+.logo2 {
+    width: 40px;
+    /* Sesuaikan ukuran logo */
+    height: auto;
+    margin-right: 8px;
+    /* Jarak antara logo dan teks */
+}
+
 
 .slider-container {
     flex: 1 1 50%;
@@ -248,9 +285,9 @@ nav a.active {
 .register-form {
     width: 100%;
     max-width: 25rem;
-    margin: 3rem 0 0 3.125rem;
+    margin: 3rem 0 0 3rem;
     padding: 1.25rem;
-    background: #edf7e1;
+    background: #EAFAEA;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -305,6 +342,12 @@ nav a.active {
 .register-form button:hover {
     background-color: #f0f0f0;
     color: #790C29;
+}
+
+.pass p {
+    margin-top: -0.25rem;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 .remember-forgot {
@@ -364,10 +407,11 @@ nav a.active {
 }
 
 footer {
-    margin-top: 3rem;
+    margin-top: 4rem;
     text-align: center;
     padding: 0.2rem;
     color: white;
+    padding-bottom: 2rem;
 }
 
 
@@ -380,10 +424,8 @@ footer {
     width: 100%;
     background-color: #EAFAEA;
     box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
-
     z-index: 1000;
     border-radius: 10px;
-    padding: 5px;
 }
 
 .mobile-navbar ul {
@@ -424,6 +466,7 @@ footer {
 .mobile-navbar ul li a:hover {
     color: #790C29;
 }
+
 .mobile-navbar a {
     display: flex;
     flex-direction: column;
@@ -437,12 +480,15 @@ footer {
 }
 
 .mobile-navbar a:hover {
-    color: #790C29; /* Warna saat hover */
+    color: #790C29;
+    /* Warna saat hover */
 }
 
 .mobile-navbar i {
     font-size: 24px;
 }
+
+
 
 /* Garis bawah untuk ikon yang aktif */
 .mobile-navbar a:target::after {
@@ -458,11 +504,93 @@ footer {
     top: 3rem;
 }
 
+.error-message {
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 0.5rem;
+    font-size: 12px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #f5c2c7;
+    border-radius: 0.25rem;
+}
+
+
+.success-message {
+    color: #25c237e3;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 0;
+    /* Atur margin kiri */
+    margin-right: auto;
+    /* Atur margin kanan jika perlu */
+
+
+}
+
+body.halaman-beranda {
+    background-image: url('aset/background.webp?v=1');
+
+}
+
+/* Halaman Beranda  */
+body.halaman-beranda main {
+    padding-top: 10rem;
+
+}
+
+body.halaman-beranda .slide {
+    text-align: center;
+}
+
+body.halaman-beranda main {
+    margin-top: 3rem;
+}
+
+body.halaman-beranda .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Header merek: logo dan teks di tengah */
+body.halaman-beranda .brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+body.halaman-beranda .brand-header .logo .logo2 {
+    width: 60px;
+    margin-bottom: 0.5rem;
+}
+
+body.halaman-beranda .brand-header .brand-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Garis navigasi (tiga garis bawah) diposisikan di tengah */
+body.halaman-beranda .nav-lines {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
 
 @media (max-width: 600px) {
     .mobile-navbar ul {
         justify-content: space-around;
         /* Beri jarak antar ikon */
+    }
+
+    .auth-buttons {
+        display: none;
     }
 
     .mobile-navbar ul li a img {
@@ -479,7 +607,17 @@ footer {
 
     .brand-text {
         display: block;
-        /* Tampilkan teks di mobile */
+        margin-left: -0.6rem;
+
+    }
+
+    .logo2 {
+        display: none;
+    }
+
+    .logo {
+        margin-left: -1.1rem;
+
     }
 
     nav ul,
@@ -490,14 +628,23 @@ footer {
         display: none;
     }
 
+    .auth-buttonsKal {
+        display: flex;
+        margin-right: -1rem;
+        gap: 0.5rem;
+        align-items: center;
+
+    }
+
     .auth-buttons {
         display: flex;
-        margin-right: 2rem;
-        gap: 1rem;
+        margin-right: 3rem;
+        gap: 0.5rem;
         align-items: center;
     }
 
-    .auth-buttons a {
+    .auth-buttons a,
+    .auth-buttonsKal a {
         text-decoration: none;
         font-weight: 600;
         color: #000000;
@@ -508,13 +655,15 @@ footer {
 
     }
 
-    .auth-buttons a:hover {
+    .auth-buttons a:hover,
+    .auth-buttonsKal a:hover {
         background-color: #790C29;
         color: white;
         border: none;
     }
 
-    .auth-buttons a:active {
+    .auth-buttons a:active,
+    .auth-buttonsKal a:active {
         background-color: #790C29;
         color: white;
     }
@@ -536,7 +685,11 @@ footer {
     .register-form {
         margin: 3rem auto 0;
         /* Tengah otomatis tanpa margin kiri */
+        width: 89%;
+    }
 
+    .login-form {
+        margin: 3rem auto 0;
         width: 90%;
     }
 
@@ -553,12 +706,16 @@ footer {
         padding-bottom: 5rem;
     }
 
+    .mobile-navbar {
+        padding: 0.1rem;
+        /* Cek apakah paddingnya sama di kedua halaman */
+    }
+
     .mobile-navbar ul li a {
         position: relative;
-        padding-bottom: 10px; 
-        
+
     }
-    
+
     .mobile-navbar ul li a.active::after,
     .mobile-navbar ul li a:focus::after {
         content: "";
@@ -566,22 +723,32 @@ footer {
         bottom: 0;
         left: 50%;
         width: 40%;
-        height: 3px;
+        height: 2px;
         background-color: #790C29;
         transform: translateX(-50%);
         border-radius: 2px;
 
     }
+
     .mobile-navbar ul li a {
-        color: #6E8E59; /* Warna default ikon */
+        color: #6E8E59;
+        /* Warna default ikon */
         font-size: 24px;
         padding: 10px;
         display: inline-block;
         transition: color 0.3s ease-in-out;
     }
-    
+
     .mobile-navbar ul li a.active {
-        color: #790C29; /* Warna ikon ketika halaman aktif */
+        color: #790C29;
+        /* Warna ikon ketika halaman aktif */
     }
-    
+
+    body.halaman-beranda main {
+        padding-top: 3rem;
+        /* atau gunakan padding-top jika lebih sesuai */
+        /* padding-top: 3rem; */
+    }
+
+
 }
