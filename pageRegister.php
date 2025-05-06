@@ -39,7 +39,7 @@ $email = $_SESSION['old_email'] ?? '';
                 <ul>
                     <li><a href="pageRegister.php"
                             class="active">Beranda</a></li>
-                    <li><a href="kalkulator.php#">Kalkulator Kalori</a></li>
+                    <li><a href="kalkulator.php">Kalkulator Kalori</a></li>
                     <li><a href="pagePlanner.php">Perencana Makanan</a></li>
                     <li><a href="pageProfil.php">Profil</a></li>
                 </ul>

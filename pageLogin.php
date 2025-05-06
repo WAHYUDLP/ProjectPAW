@@ -1,3 +1,5 @@
+
+<!-- // Ini ntar disambungin dari edit profil -->
 <?php if (isset($_GET['account_deleted']) && $_GET['account_deleted'] == 1): ?>
     <div class="success-message">Akun Anda telah berhasil dihapus.</div>
 <?php endif; ?>
@@ -10,11 +12,6 @@ require 'db.php';
 $email = $_SESSION['old_email'] ?? '';
 unset($_SESSION['old_email']);
 
-// Jika sudah login, langsung redirect
-if (isset($_SESSION['user_id'])) {
-    header("Location: beranda.php");
-    exit;
-}
 
 // Jika ada remember_token di cookie
 if (isset($_COOKIE['remember_token'])) {
