@@ -129,10 +129,7 @@ if (isset($_COOKIE['remember_token'])) {
                     <div class="success-message"><?= htmlspecialchars($_SESSION['success']); ?></div>
                     <?php unset($_SESSION['success']); ?>
                 <?php endif; ?>
-                <?php if (isset($_SESSION['error'])): ?>
-                    <div class="error-message"><?= htmlspecialchars($_SESSION['error']); ?></div>
-                    <?php unset($_SESSION['error']); ?>
-                <?php endif; ?>
+                
 
                 <p class="heading">AYO MULAI SEKARANG!</p>
                 <h3>Masuk Akun</h3>
@@ -152,14 +149,8 @@ if (isset($_COOKIE['remember_token'])) {
                         </label>
                         <a href="lupaPassword.html">Lupa Kata Sandi?</a>
                     </div>
-
-                    <?php if (isset($_GET['error']) && $_GET['error'] == 1): ?>
-                        <div class="error-message">Username atau password salah.</div>
-                    <?php endif; ?>
-                    <?php if (isset($_SESSION['error'])): ?>
-                        <div class="error-message"><?= htmlspecialchars($_SESSION['error']); ?></div>
-                        <?php unset($_SESSION['error']); ?>
-                    <?php endif; ?>
+                    <!-- Tempat pesan error akan muncul -->
+                    <div id="login-error" class="error-message" style="display:none;"></div>
 
                     <button type="submit">MASUK</button>
 
