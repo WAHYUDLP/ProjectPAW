@@ -1,11 +1,19 @@
 <?php
 session_start();
 
+$gender = $_SESSION['gender'] ?? '';
+$age = $_SESSION['age'] ?? '';
+$weight = $_SESSION['weight'] ?? '';
+$height = $_SESSION['height'] ?? '';
+$body_fat = $_SESSION['body_fat'] ?? '';
+$activity = $_SESSION['activity'] ?? '';
+
+
 $hasil_kalori = $_SESSION['hasil_kalori'] ?? null;
 $tombol_label = $_SESSION['tombol_label'] ?? 'HITUNG';
 
 // Reset session agar tidak menampilkan hasil terus-menerus saat refresh
-unset($_SESSION['hasil_kalori'], $_SESSION['tombol_label']);
+// unset($_SESSION['hasil_kalori'], $_SESSION['tombol_label']);
 ?>
 
 
@@ -75,58 +83,66 @@ unset($_SESSION['hasil_kalori'], $_SESSION['tombol_label']);
 
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
             <!-- Form -->
+            <!-- Form -->
             <div class="md:col-span-2 bg-[#EAFAEA] rounded-lg shadow p-6">
                 <form method="POST" class="space-y-4" action="prosesKalkulator.php">
                     <div>
                         <label class="block mb-1">Jenis Kelamin</label>
                         <select name="gender" class="w-full border rounded px-3 py-2" required>
-                            <option disabled selected>-- pilih opsi --</option>
-                            <option <?= (isset($gender) && $gender == 'Pria') ? 'selected' : '' ?>>Pria</option>
-                            <option <?= (isset($gender) && $gender == 'Wanita') ? 'selected' : '' ?>>Wanita</option>
+                            <option disabled <?= $gender == '' ? 'selected' : '' ?>>-- pilih opsi --</option>
+                            <option value="Pria" <?= $gender == 'Pria' ? 'selected' : '' ?>>Pria</option>
+                            <option value="Wanita" <?= $gender == 'Wanita' ? 'selected' : '' ?>>Wanita</option>
                         </select>
                     </div>
                     <div>
                         <label class="block mb-1">Umur</label>
-                        <input type="number" name="age" class="w-full border rounded px-3 py-2" required value="<?= $_POST['age'] ?? '' ?>" />
+                        <input type="number" name="age" class="w-full border rounded px-3 py-2" required value="<?= htmlspecialchars($age) ?>" />
                     </div>
                     <div>
                         <label class="block mb-1">Berat Badan</label>
                         <div class="flex items-center">
-                            <input type="number" name="weight" class="w-full border rounded px-3 py-2" required value="<?= $_POST['weight'] ?? '' ?>" />
+                            <input type="number" name="weight" class="w-full border rounded px-3 py-2" required value="<?= htmlspecialchars($weight) ?>" />
                             <span class="ml-2">kg</span>
                         </div>
                     </div>
                     <div>
                         <label class="block mb-1">Tinggi Badan</label>
                         <div class="flex items-center">
-                            <input type="number" name="height" class="w-full border rounded px-3 py-2" required value="<?= $_POST['height'] ?? '' ?>" />
+                            <input type="number" name="height" class="w-full border rounded px-3 py-2" required value="<?= htmlspecialchars($height) ?>" />
                             <span class="ml-2">cm</span>
                         </div>
                     </div>
                     <div>
                         <label class="block mb-1">Lemak Tubuh</label>
                         <select name="body_fat" class="w-full border rounded px-3 py-2">
-                            <option disabled selected>-- pilih opsi --</option>
-                            <option <?= ($_POST['body_fat'] ?? '') == 'Tidak tahu' ? 'selected' : '' ?>>Tidak tahu</option>
-                            <option <?= ($_POST['body_fat'] ?? '') == 'Kurang dari 18%' ? 'selected' : '' ?>>Kurang dari 18%</option>
-                            <option <?= ($_POST['body_fat'] ?? '') == '18% - 25%' ? 'selected' : '' ?>>18% - 25%</option>
-                            <option <?= ($_POST['body_fat'] ?? '') == 'Lebih dari 25%' ? 'selected' : '' ?>>Lebih dari 25%</option>
+                            <option disabled <?= $body_fat == '' ? 'selected' : '' ?>>-- pilih opsi --</option>
+                            <option value="Tidak tahu" <?= $body_fat == 'Tidak tahu' ? 'selected' : '' ?>>Tidak tahu</option>
+                            <option value="Kurang dari 18%" <?= $body_fat == 'Kurang dari 18%' ? 'selected' : '' ?>>Kurang dari 18%</option>
+                            <option value="18% - 25%" <?= $body_fat == '18% - 25%' ? 'selected' : '' ?>>18% - 25%</option>
+                            <option value="Lebih dari 25%" <?= $body_fat == 'Lebih dari 25%' ? 'selected' : '' ?>>Lebih dari 25%</option>
                         </select>
                     </div>
                     <div>
                         <label class="block mb-1">Level Aktivitas</label>
                         <select name="activity" class="w-full border rounded px-3 py-2" required>
-                            <option disabled selected>-- pilih opsi --</option>
-                            <option <?= (isset($activity) && $activity == 'Sangat Rendah') ? 'selected' : '' ?>>Sangat Rendah</option>
-                            <option <?= (isset($activity) && $activity == 'Ringan') ? 'selected' : '' ?>>Ringan</option>
-                            <option <?= (isset($activity) && $activity == 'Sedang') ? 'selected' : '' ?>>Sedang</option>
-                            <option <?= (isset($activity) && $activity == 'Tinggi') ? 'selected' : '' ?>>Tinggi</option>
-                            <option <?= (isset($activity) && $activity == 'Sangat Tinggi') ? 'selected' : '' ?>>Sangat Tinggi</option>
+                            <option disabled <?= $activity == '' ? 'selected' : '' ?>>-- pilih opsi --</option>
+                            <option value="Sangat Rendah" <?= $activity == 'Sangat Rendah' ? 'selected' : '' ?>>Sangat Rendah</option>
+                            <option value="Ringan" <?= $activity == 'Ringan' ? 'selected' : '' ?>>Ringan</option>
+                            <option value="Sedang" <?= $activity == 'Sedang' ? 'selected' : '' ?>>Sedang</option>
+                            <option value="Tinggi" <?= $activity == 'Tinggi' ? 'selected' : '' ?>>Tinggi</option>
+                            <option value="Sangat Tinggi" <?= $activity == 'Sangat Tinggi' ? 'selected' : '' ?>>Sangat Tinggi</option>
                         </select>
                     </div>
                     <button type="submit" class="bg-[#CAE0BC] w-full py-2 rounded font-semibold"><?= $tombol_label ?></button>
+
+                    <div class="text-right mt-2">
+                        <a href="resetKalkulator.php" class="text-sm text-[#790C29] font-bold underline hover:text-red-800">Reset</a>
+                    </div>
+
                 </form>
             </div>
+
+
 
 
             <!-- Info Lemak Tubuh -->

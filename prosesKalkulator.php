@@ -80,13 +80,11 @@ $kalori = [
     'bangun_massa_otot' => round($tdee + 500)
 ];
 
-// Jika diet sudah ada di session, jangan ubah kalori yang sudah ada
-if (!isset($_SESSION['kalori']) || $_SESSION['diet'] !== $diet) {
-    // Simpan ke session
-    $_SESSION['kalori'] = $kalori;
-    $_SESSION['diet'] = $diet;
-    $_SESSION['tombol_label'] = 'HITUNG ULANG';
-}
+$_SESSION['kalori'] = $kalori;
+$_SESSION['diet'] = $diet;
+$_SESSION['tombol_label'] = 'HITUNG ULANG';
+$_SESSION['hasil_kalori'] = $kalori[$diet];
+
 
 header("Location: kalkulator.php#hasil-kalori");
 exit;
