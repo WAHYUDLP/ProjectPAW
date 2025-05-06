@@ -25,9 +25,11 @@ $(document).ready(function () {
 setTimeout(() => {
     const message = document.querySelector('.error-message, .success-message');
     if (message) {
+        console.log(message); // Untuk debugging
         message.style.display = 'none';
     }
 }, 3000);
+
 
 //Konfirmasi logout
 function confirmLogout() {

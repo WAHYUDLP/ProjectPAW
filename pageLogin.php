@@ -1,4 +1,3 @@
-
 <!-- // Ini ntar disambungin dari edit profil -->
 <?php if (isset($_GET['account_deleted']) && $_GET['account_deleted'] == 1): ?>
     <div class="success-message">Akun Anda telah berhasil dihapus.</div>
@@ -41,6 +40,8 @@ if (isset($_COOKIE['remember_token'])) {
     <link
         href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;700&display=swap"
         rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="script.js" defer></script>
@@ -57,7 +58,7 @@ if (isset($_COOKIE['remember_token'])) {
             </div>
             <nav>
                 <ul>
-                    <li><a href="pageLogin.php.php"
+                    <li><a href="pageLogin.php"
                             class="active">Beranda</a></li>
                     <li><a href="kalkulator.php">Kalkulator Kalori</a></li>
                     <li><a href="pagePlanner.php">Perencana Makanan</a></li>

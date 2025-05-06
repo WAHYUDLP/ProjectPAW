@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['old_name'] = $name;
         $_SESSION['old_email'] = $email;
-
         $_SESSION['error'] = "Format email tidak valid.";
         header("Location: pageRegister.php#form-register");
         exit;
@@ -30,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (strlen($password) < 6) {
         $_SESSION['old_name'] = $name;
         $_SESSION['old_email'] = $email;
-
         $_SESSION['error'] = "Password minimal 6 karakter.";
         header("Location: pageRegister.php#form-register");
         exit;
@@ -39,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($password !== $confirm) {
         $_SESSION['old_name'] = $name;
         $_SESSION['old_email'] = $email;
-
         $_SESSION['error'] = "Password dan konfirmasi tidak sama.";
         header("Location: pageRegister.php#form-register");
         exit;
