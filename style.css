@@ -46,6 +46,59 @@ body::before {
     z-index: -1;
 }
 
+body.halaman-beranda {
+    background-image: url('aset/background.webp?v=1');
+
+}
+
+/* Halaman Beranda  */
+body.halaman-beranda main {
+    padding-top: 10rem;
+
+}
+
+body.halaman-beranda .slide {
+    text-align: center;
+}
+
+body.halaman-beranda main {
+    margin-top: 3rem;
+}
+
+body.halaman-beranda .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Header merek: logo dan teks di tengah */
+body.halaman-beranda .brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+body.halaman-beranda .brand-header .logo .logo2 {
+    width: 60px;
+    margin-bottom: 0.5rem;
+}
+
+body.halaman-beranda .brand-header .brand-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Garis navigasi (tiga garis bawah) diposisikan di tengah */
+body.halaman-beranda .nav-lines {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -529,58 +582,7 @@ footer {
 
 }
 
-body.halaman-beranda {
-    background-image: url('aset/background.webp?v=1');
 
-}
-
-/* Halaman Beranda  */
-body.halaman-beranda main {
-    padding-top: 10rem;
-
-}
-
-body.halaman-beranda .slide {
-    text-align: center;
-}
-
-body.halaman-beranda main {
-    margin-top: 3rem;
-}
-
-body.halaman-beranda .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* Header merek: logo dan teks di tengah */
-body.halaman-beranda .brand-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-body.halaman-beranda .brand-header .logo .logo2 {
-    width: 60px;
-    margin-bottom: 0.5rem;
-}
-
-body.halaman-beranda .brand-header .brand-name {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: white;
-}
-
-/* Garis navigasi (tiga garis bawah) diposisikan di tengah */
-body.halaman-beranda .nav-lines {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 1rem;
-}
 
 
 @media (max-width: 600px) {

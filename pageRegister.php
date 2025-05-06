@@ -1,5 +1,12 @@
-<?php session_start(); ?>
+<?php session_start();
+require 'db.php';
 
+// Ambil email jika sebelumnya dikirim
+$name = $_SESSION['old_name'] ?? '';
+
+$email = $_SESSION['old_email'] ?? '';
+
+?>
 
 
 
@@ -98,17 +105,18 @@
                 </div>
             </div>
 
-            <section class="register-form">
+            <section id="form-register" class="register-form">
+
                 <p class="heading">AYO MULAI SEKARANG!</p>
                 <h3>Buat Akun</h3>
 
 
                 <form method="POST" action="prosesRegister.php">
                     <label for="name">Nama Anda</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required value="<?= isset($_SESSION['old_name']) ? htmlspecialchars($_SESSION['old_name']) : '' ?>">
 
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required value="<?= isset($_SESSION['old_email']) ? htmlspecialchars($_SESSION['old_email']) : '' ?>">
 
                     <label for="password">Kata Sandi</label>
                     <input type="password" id="password" name="password"
@@ -158,6 +166,7 @@
                         <p>Sudah punya akun? <a href="pageLogin.php">MASUK DI
                                 SINI</a></p>
                     </div>
+            </section>
 
         </div>
     </main>
@@ -165,6 +174,10 @@
     <footer>
         <p>&copy; 2025 BloodWellness</p>
     </footer>
+    <?php
+    // Hapus session old_name dan old_email setelah form selesai diproses
+    unset($_SESSION['old_name'], $_SESSION['old_email']);
+    ?>
 </body>
 
 </html>

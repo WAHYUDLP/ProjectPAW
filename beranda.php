@@ -14,12 +14,12 @@ session_start();
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js" defer></script>
     <title>BloodWellness</title>
 </head>
 
-<body class ="halaman-beranda">
+<body class="halaman-beranda">
     <header>
         <div class="nav-container">
             <div class="logo-container">
@@ -42,9 +42,9 @@ session_start();
         <!-- Navbar Mobile -->
         <div class="mobile-navbar">
             <ul>
-                <li><a href="pageLogin.php" id="home" class="active"><i class="fas fa-home"></i></a></li>
-                <li><a href="kalkulator.php#kalkulator" id="kalkulator"><i class="fas fa-calculator"></i></a></li>
-                <li><a href="pagePlanner.php#makanan" id="makanan"><i class="fas fa-utensils"></i></a></li>
+                <li><a href="beranda.php" id="home" class="active"><i class="fas fa-home"></i></a></li>
+                <li><a href="kalkulator.php" id="kalkulator"><i class="fas fa-calculator"></i></a></li>
+                <li><a href="pagePlanner.php" id="makanan"><i class="fas fa-utensils"></i></a></li>
                 <li><a href="pageProfil.php" id="profil"><i class="fas fa-user"></i></a></li>
             </ul>
         </div>

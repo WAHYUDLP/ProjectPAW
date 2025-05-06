@@ -6,6 +6,10 @@
 session_start();
 require 'db.php';
 
+// Ambil email jika sebelumnya dikirim
+$email = $_SESSION['old_email'] ?? '';
+unset($_SESSION['old_email']);
+
 // Jika sudah login, langsung redirect
 if (isset($_SESSION['user_id'])) {
     header("Location: beranda.php");
@@ -122,7 +126,7 @@ if (isset($_COOKIE['remember_token'])) {
                 </div>
             </div>
 
-            <section class="register-form">
+            <section id="form-login" class="register-form">
                 <?php if (isset($_SESSION['success'])): ?>
                     <div class="success-message"><?= htmlspecialchars($_SESSION['success']); ?></div>
                     <?php unset($_SESSION['success']); ?>
@@ -135,9 +139,9 @@ if (isset($_COOKIE['remember_token'])) {
                 <p class="heading">AYO MULAI SEKARANG!</p>
                 <h3>Masuk Akun</h3>
 
-                <form method="POST" action="prosesLogin.php">
+                <form id="loginForm" method="POST" action="prosesLogin.php">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" value="<?= htmlspecialchars($email) ?>" required>
 
                     <label for="password">Kata Sandi</label>
                     <input type="password" id="password" name="password"
@@ -188,6 +192,7 @@ if (isset($_COOKIE['remember_token'])) {
                         <p>Belum punya akun? <a href="pageRegister.php">DAFTAR DI
                                 SINI</a></p>
                     </div>
+            </section>
 
         </div>
     </main>
