@@ -83,7 +83,7 @@ session_start();
     </main>
 
     <footer>
-        <p>&copy; 2023 BloodWellness</p>
+        <p>&copy; 2025 BloodWellness</p>
     </footer>
 </body>
 

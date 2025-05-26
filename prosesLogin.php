@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 header('Content-Type: application/json');
 
@@ -32,11 +33,16 @@ try {
             setcookie('remember_token', $token, time() + (86400 * 30), "/", "", false, true); // HTTPOnly
             $pdo->prepare("UPDATE usersaccount SET remember_token = ? WHERE id = ?")->execute([$token, $user['id']]);
         }
-
         echo json_encode(['success' => true]);
+        exit;
     } else {
         echo json_encode(['success' => false, 'message' => 'Email atau password salah.']);
+        exit;
     }
 } catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => 'Terjadi kesalahan server.']);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Terjadi kesalahan server.',
+        'error' => $e->getMessage() // tampilkan error asli
+    ]);
 }

@@ -129,7 +129,26 @@ if (isset($_COOKIE['remember_token'])) {
                     <div class="success-message"><?= htmlspecialchars($_SESSION['success']); ?></div>
                     <?php unset($_SESSION['success']); ?>
                 <?php endif; ?>
-                
+
+
+
+                <?php if (isset($_SESSION['error'])): ?>
+                    <script>
+                        window.addEventListener('DOMContentLoaded', () => {
+                            const errorDiv = document.getElementById('login-error');
+                            if (errorDiv) {
+                                errorDiv.textContent = <?php echo json_encode($_SESSION['error']); ?>;
+                                errorDiv.style.display = 'block';
+
+                                setTimeout(() => {
+                                    errorDiv.style.display = 'none';
+                                }, 3000);
+                            }
+                        });
+                    </script>
+                <?php unset($_SESSION['error']);
+                endif; ?>
+                <div id="login-success" class="success-message" style="display:none;"></div>
 
                 <p class="heading">AYO MULAI SEKARANG!</p>
                 <h3>Masuk Akun</h3>
