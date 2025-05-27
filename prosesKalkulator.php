@@ -82,7 +82,7 @@ $kalori = [
 
 $_SESSION['kalori'] = $kalori;
 $_SESSION['diet'] = $diet;
-$_SESSION['tombol_label'] = 'HITUNG ULANG';
+$_SESSION['tombol_label'] = 'HITUNG';
 $_SESSION['hasil_kalori'] = $kalori[$diet];
 
 

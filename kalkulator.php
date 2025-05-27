@@ -10,7 +10,10 @@ $activity = $_SESSION['activity'] ?? '';
 
 
 $hasil_kalori = $_SESSION['hasil_kalori'] ?? null;
-$tombol_label = $_SESSION['tombol_label'] ?? 'HITUNG';
+$tombol_label = isset($_SESSION['kalori']) ? 'ATUR ULANG' : 'HITUNG';
+$tombol_action = isset($_SESSION['kalori']) ? 'resetKalkulator.php' : 'prosesKalkulator.php';
+
+
 
 // Reset session agar tidak menampilkan hasil terus-menerus saat refresh
 // unset($_SESSION['hasil_kalori'], $_SESSION['tombol_label']);
@@ -28,7 +31,7 @@ $tombol_label = $_SESSION['tombol_label'] ?? 'HITUNG';
     <link
         href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styleGeneral.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="script.js" defer></script>
 
@@ -40,7 +43,7 @@ $tombol_label = $_SESSION['tombol_label'] ?? 'HITUNG';
     <header>
         <div class="nav-container">
             <div class="logo-container">
-                <img src="aset/logo.png" alt="Logo" class="logo">
+                <img src="css/aset/logo.png" alt="Logo" class="logo">
                 <span class="brand-text">BloodWellness</span>
             </div>
             <nav>
@@ -84,8 +87,8 @@ $tombol_label = $_SESSION['tombol_label'] ?? 'HITUNG';
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
             <!-- Form -->
             <!-- Form -->
-            <div class="md:col-span-2 bg-[#EAFAEA] rounded-lg shadow p-6">
-                <form method="POST" class="space-y-4" action="prosesKalkulator.php">
+            <div class="md:col-span-2 bg-[#CAE0BC] rounded-lg shadow p-6">
+                <form method="POST" class="space-y-4" action="<?= $tombol_action ?>">
                     <div>
                         <label class="block mb-1">Jenis Kelamin</label>
                         <select name="gender" class="w-full border rounded px-3 py-2" required>
@@ -133,11 +136,11 @@ $tombol_label = $_SESSION['tombol_label'] ?? 'HITUNG';
                             <option value="Sangat Tinggi" <?= $activity == 'Sangat Tinggi' ? 'selected' : '' ?>>Sangat Tinggi</option>
                         </select>
                     </div>
-                    <button type="submit" class="bg-[#CAE0BC] w-full py-2 rounded font-semibold"><?= $tombol_label ?></button>
-
-                    <div class="text-right mt-2">
-                        <a href="resetKalkulator.php" class="text-sm text-[#790C29] font-bold underline hover:text-red-800">Reset</a>
-                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-[#EAFAEA] hover:bg-[#CAE0BC] text-black py-2 px-4 rounded font-semibold transition duration-200 transform hover:-translate-y-0.5">
+                        <?= $tombol_label ?>
+                    </button>
 
                 </form>
             </div>
@@ -152,12 +155,12 @@ $tombol_label = $_SESSION['tombol_label'] ?? 'HITUNG';
 
                 <!-- Gambar pertama (muncul di mobile dan desktop) -->
                 <div class="mt-4">
-                    <img src="aset/kalkulator.webp" alt="Kalori" class="w-full h-auto rounded-lg">
+                    <img src="css/aset/kalkulator.webp" alt="Kalori" class="w-full h-auto rounded-lg">
                 </div>
 
                 <!-- Gambar kedua (hanya muncul di desktop) -->
                 <div class="mt-4 hidden lg:block">
-                    <img src="aset/kalkulator2.webp" alt="Kalori" class="w-full h-auto rounded-lg">
+                    <img src="css/aset/kalkulator2.webp" alt="Kalori" class="w-full h-auto rounded-lg">
                 </div>
             </div>
         </div>

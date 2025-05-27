@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styleGeneral.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;700&display=swap"
         rel="stylesheet">
@@ -16,14 +16,14 @@ session_start();
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js" defer></script>
-    <title>BloodWellness</title>
+    <title>Beranda BloodWellness</title>
 </head>
 
 <body class="halaman-beranda">
     <header>
         <div class="nav-container">
             <div class="logo-container">
-                <img src="aset/logo.png" alt="Logo" class="logo">
+                <img src="css/aset/logo.png" alt="Logo" class="logo">
                 <span class="brand-text">BloodWellness</span>
             </div>
             <nav>
@@ -36,7 +36,7 @@ session_start();
             </nav>
         </div>
 
-        <div class="auth-buttons">
+        <div class="auth-buttonsKal">
             <a href="prosesLogout.php" onclick="confirmLogout()">Keluar</a>
         </div>
         <!-- Navbar Mobile -->
@@ -54,7 +54,7 @@ session_start();
         <div class="container">
             <div class="slider-container">
                 <div class="brand-header">
-                    <img src="aset/logo.png" alt="Logo" class="logo2">
+                    <img src="css/aset/logo.png"  alt="Logo" class="logo2">
                     <span class="brand-name">BloodWellness</span>
                 </div>
 

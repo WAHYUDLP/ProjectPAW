@@ -16,7 +16,7 @@ $email = $_SESSION['old_email'] ?? '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styleGeneral.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;700&display=swap"
         rel="stylesheet">
@@ -26,14 +26,14 @@ $email = $_SESSION['old_email'] ?? '';
 
     <script src="script.js" defer></script>
 
-    <title>BloodWellness</title>
+    <title>Daftar Akun BloodWellness</title>
 </head>
 
 <body class="bodyLogin">
     <header>
         <div class="nav-container">
             <div class="logo-container">
-                <img src="aset/logo.png" alt="Logo" class="logo">
+                <img src="css/aset/logo.png" alt="Logo" class="logo">
                 <span class="brand-text">BloodWellness</span>
             </div>
             <nav>
@@ -47,7 +47,7 @@ $email = $_SESSION['old_email'] ?? '';
             </nav>
         </div>
 
-        <div class="auth-buttons">
+        <div class="auth-buttonsKal">
             <a href="pageLogin.php">Masuk</a>
             <a href="pageRegister.php">Daftar</a>
         </div>
@@ -71,7 +71,7 @@ $email = $_SESSION['old_email'] ?? '';
 
             <div class="slider-container">
                 <div class="brand-header">
-                    <img src="aset/logo.png" alt="Logo" class="logo2">
+                    <img src="css/aset/logo.png" alt="Logo" class="logo2">
                     <span class="brand-name">BloodWellness</span>
                 </div>
 
@@ -109,7 +109,7 @@ $email = $_SESSION['old_email'] ?? '';
             <section id="form-register" class="register-form">
 
                 <p class="heading">AYO MULAI SEKARANG!</p>
-                <h3>Buat Akun</h3>
+                <h3 class="heading3">Buat Akun</h3>
 
 
                 <form method="POST" action="prosesRegister.php">

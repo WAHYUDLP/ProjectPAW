@@ -36,7 +36,7 @@ if (isset($_COOKIE['remember_token'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/styleGeneral.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;700&display=swap"
         rel="stylesheet">
@@ -45,7 +45,7 @@ if (isset($_COOKIE['remember_token'])) {
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="script.js" defer></script>
-    <title>BloodWellness</title>
+    <title>Masuk Akun BloodWellness</title>
 
 </head>
 
@@ -53,7 +53,7 @@ if (isset($_COOKIE['remember_token'])) {
     <header>
         <div class="nav-container">
             <div class="logo-container">
-                <img src="aset/logo.png" alt="Logo" class="logo">
+                <img src="css/aset/logo.png" alt="Logo" class="logo">
                 <span class="brand-text">BloodWellness</span>
             </div>
             <nav>
@@ -67,7 +67,7 @@ if (isset($_COOKIE['remember_token'])) {
             </nav>
         </div>
 
-        <div class="auth-buttons">
+        <div class="auth-buttonsKal">
             <a href="pageLogin.php">Masuk</a>
             <a href="pageRegister.php">Daftar</a>
         </div>
@@ -89,7 +89,7 @@ if (isset($_COOKIE['remember_token'])) {
         <div class="container">
             <div class="slider-container">
                 <div class="brand-header">
-                    <img src="aset/logo.png" alt="Logo" class="logo2">
+                    <img src="css/aset/logo.png" alt="Logo" class="logo2">
                     <span class="brand-name">BloodWellness</span>
                 </div>
 
@@ -130,8 +130,6 @@ if (isset($_COOKIE['remember_token'])) {
                     <?php unset($_SESSION['success']); ?>
                 <?php endif; ?>
 
-
-
                 <?php if (isset($_SESSION['error'])): ?>
                     <script>
                         window.addEventListener('DOMContentLoaded', () => {
@@ -151,7 +149,7 @@ if (isset($_COOKIE['remember_token'])) {
                 <div id="login-success" class="success-message" style="display:none;"></div>
 
                 <p class="heading">AYO MULAI SEKARANG!</p>
-                <h3>Masuk Akun</h3>
+                <h3 class ="heading3" >Masuk Akun</h3>
 
                 <form id="loginForm" method="POST" action="prosesLogin.php">
                     <label for="email">Email</label>
@@ -166,7 +164,7 @@ if (isset($_COOKIE['remember_token'])) {
                             <input type="checkbox" name="remember"> Ingat
                             Saya
                         </label>
-                        <a href="lupaPassword.html">Lupa Kata Sandi?</a>
+                        <a href="lupaPassword.php">Lupa Kata Sandi?</a>
                     </div>
                     <!-- Tempat pesan error akan muncul -->
                     <div id="login-error" class="error-message" style="display:none;"></div>
