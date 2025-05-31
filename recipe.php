@@ -36,67 +36,114 @@ $fat  = (int)($menu['fat_pct']   ?? 0);
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="script.js" defer></script>
-  <style>
-    /* ===== hanya styling resep ===== */
-    .recipe-box {
-      background: #CAE0BC;
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      border-radius: 1rem;
-    }
-    .recipe-box img {
-      width: 45%;
-      float: left;
-      border-radius: .5rem;
-      margin-right: 2rem; /* jarak ke teks */
-      object-fit: cover;
-      aspect-ratio: 4/3;
-    }
-    .macro-bar {
-      position: absolute; /* akan kita bungkus nanti */
-      top: 8px;
-      right: 8px;
-      width: 180px;
-      font-size: .75rem;
-      color: #fff;
-      margin-bottom: 0;
-    }
-    .macro-row {
-      padding: 2px 6px;
-      margin-bottom: 2px;
-    }
-    .prot { background: #0062ff }
-    .carb { background: #ffb000 }
-    .fat  { background: #c000ff }
+    <style>
+        /* ===== hanya styling resep ===== */
+        .recipe-box {
+            background: #CAE0BC;
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
 
-    /* dua kolom bahan & langkah */
-    .two-col {
-      clear: both;           /* bersihkan float gambar */
-      display: flex;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-    .two-col ul,
-    .two-col ol {
-      margin: 0 0 0 1.2rem;
-      font-size: .9rem;
-    }
+        /* Bungkus gambar dan macro-bar jadi flex container */
+        .img-macro-wrap {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            position: relative;
+            /* boleh */
+            /* hilangkan float dan width inline */
+        }
 
-    /* --- PENTING: paksa judul turun di bawah gambar --- */
-    .recipe-box h2 {
-      clear: left;           /* hentikan float kiri */
-      font-size: 1.75rem;
-      margin: 1.5rem 0;      /* jarak atas & bawah */
-    }
-  </style>
+        .img-macro-wrap img {
+            width: 45%;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+            /* hapus float dan margin jika ada */
+            float: none;
+            margin: 0;
+            transition: width 0.3s ease;
+        }
+
+        .macro-bar {
+            position: relative;
+            width: 45%;
+            font-size: 0.75rem;
+            color: #fff;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .macro-row {
+            padding: 2px 6px;
+            margin-bottom: 2px;
+            border-radius: 4px;
+        }
+
+        .prot {
+            background: #0062ff;
+        }
+
+        .carb {
+            background: #ffb000;
+        }
+
+        .fat {
+            background: #c000ff;
+        }
+
+        /* dua kolom bahan & langkah */
+        .two-col {
+            clear: both;
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .two-col ul,
+        .two-col ol {
+            margin: 0 0 0 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- PENTING: paksa judul turun di bawah gambar --- */
+        .recipe-box h2 {
+            clear: left;
+            font-size: 1.75rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Responsive: di layar kecil, gambar & macro-bar jadi vertikal */
+        @media (max-width: 600px),
+        (max-width: 768px) {
+            .img-macro-wrap {
+                flex-direction: column;
+            }
+
+            .img-macro-wrap img,
+            .macro-bar {
+                width: 100%;
+            }
+
+            .macro-bar {
+                margin-top: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body class="halaman-menu">
   <header>
     <div class="nav-container">
       <div class="logo-container">
-        <img src="aset/logo.png" alt="Logo" class="logo">
+        <img src="css/aset/logo.png" alt="Logo" class="logo">
         <span class="brand-text">BloodWellness</span>
       </div>
       <nav>
@@ -123,7 +170,7 @@ $fat  = (int)($menu['fat_pct']   ?? 0);
 
     <div class="recipe-box">
       <!-- bungkus gambar + grafik -->
-      <div class="img-macro-wrap" style="position:relative; float:left; width:45%; margin-right:2rem;">
+      <div class="img-macro-wrap" >
         <img
           src="images/<?= htmlspecialchars($menu['image']) ?>"
           alt="<?= htmlspecialchars($menu['name']) ?>"
